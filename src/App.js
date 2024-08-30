@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import ResponsiveGrid from "./components/about";
+import ResponsiveGrid2 from "./components/about2";
+import Contact from "./components/contact";
+import Footer from "./components/footer";
+import Home from "./components/home";
+import DrawerAppBar from "./components/navbar";
+import Products from "./components/products";
+import Speciality from "./components/speciality";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Home />
+      <DrawerAppBar />
+      <ResponsiveGrid2 />
+      <ResponsiveGrid />
+      <Products />
+      <Speciality />
+      <Contact />
+      <Footer />
     </div>
   );
 }
