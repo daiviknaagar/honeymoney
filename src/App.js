@@ -5,6 +5,7 @@ import Footer from "./components/footer";
 import Home from "./components/home";
 import DrawerAppBar from "./components/navbar";
 import Products from "./components/products";
+import Carousel from "./components/products2";
 import Speciality from "./components/speciality";
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
       <DrawerAppBar />
       <ResponsiveGrid2 />
       <ResponsiveGrid />
-      <Products />
+      <Carousel />
+      {/* <Products /> */}
       <Speciality />
       <Contact />
       <Footer />
