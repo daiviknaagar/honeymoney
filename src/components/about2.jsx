@@ -1,101 +1,138 @@
 import * as React from 'react';
 import { experimentalStyled as styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import { motion } from "framer-motion"
-import { createTheme } from '@mui/material/styles';
+import { Box, createTheme, Paper, Grid, Typography, useMediaQuery } from '@mui/material';
+import { motion } from "framer-motion";
+import theme from './theme';
 
-const theme = createTheme({
-    palette: {
-        primary: {
-            light: '#e9c46a',
-            main: '#f4a261',
-            dark: '#e76f51',
-            contrastText: '#fff',
-        },
-        secondary: {
-            light: '#ff7961',
-            main: '#f44336',
-            dark: '#ba000d',
-            contrastText: '#000',
-        },
-    },
-});
+const t = createTheme({})
 
 const cardVariants = {
     offscreen: {
         y: 20,
         opacity: 0,
-        scale: 0.9
+        scale: 0.9,
     },
     onscreen: {
         y: 0,
         scale: 1,
-        opacity: 1
-    }
+        opacity: 1,
+        transition: {
+            duration: 0.8,
+        },
+    },
 };
 
 const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-    ...theme.typography.body2,
     padding: theme.spacing(2),
     textAlign: 'center',
-    color: theme.palette.text.secondary,
 }));
 
 export default function ResponsiveGrid2() {
-    return (
-        <Box sx={{ flexGrow: 1 }}>
-            <Box sx={{ alignContent: 'center' }}>
-                <Grid container columns={{ xs: 2, sm: 2, md: 12 }}>
-                    <Grid item xs={6} sx={{ padding: 0 }}>
-                        <Item variant='outlined' sx={{ height: '70vh', borderRadius: 0, backgroundColor: theme.palette.primary.dark }}>
-                            <motion.div variants={cardVariants}
-                                initial="offscreen"
-                                whileInView="onscreen"
-                                viewport={{ once: true, amount: 0.8 }} class="writeup" id="cont1" style={{}}>
-                                <image>
+    const isSmallScreen = useMediaQuery(t.breakpoints.down('md'));
 
-                                </image>
-                            </motion.div>
-                        </Item>
-                    </Grid>
-                    <Grid item xs={6} sx={{
-                        padding: 0,
-                        position: { xs: 'absolute', sm: 'absolute', md: 'static' },
-                    }}>
-                        <Item variant='outlined' sx={{
-                            height: '70vh',
-                            borderRadius: 0,
-                            alignContent: 'center',
-                            backgroundColor: { xs: 'transparent', sm: 'transparent', md: theme.palette.primary.light },
+    return (
+        <Box id='About' sx={{ flexGrow: 1 }}>
+            <Box sx={{ alignContent: 'center' }}>
+                <Grid container columns={{ xs: 2, sm: 2, md: 12 }} sx={{ backgroundColor: theme.colors.black }}>
+                    {/* About Us Text */}
+                    <Grid item xs={12} md={6} sx={{ padding: 0 }}>
+                        <Item variant='none' sx={{
+                            height: { xs: 'auto', md: '100vh' }, backgroundColor: theme.colors.transparent, borderRadius: 0,
+                            justifyContent: 'center',
+                            display: 'flex'
                         }}>
-                            <motion.div variants={cardVariants}
+                            <motion.div
+                                variants={cardVariants}
                                 initial="offscreen"
                                 whileInView="onscreen"
-                                viewport={{ once: true, amount: 0.8 }} class="writeup" id="cont1"
+                                viewport={{ once: true, amount: 0.8 }}
+                                className="writeup"
+                                id="cont1"
                                 style={{
                                     display: 'flex',
                                     flexDirection: 'column',
-                                    // backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                                    // backdropFilter: 'blur(10px)',
-                                    // WebkitBackdropFilter: 'blur(10px)',
-                                    borderRadius: 5,
-                                    padding: 16
+                                    padding: 0,
+                                    alignItems: 'left',
+                                    p: 10,
+                                    justifyContent: 'center'
+                                }}
+                            >
+                                {isSmallScreen && (
+                                    <Box
+                                        component="img"
+                                        src={`https://woodworkingnearme.com/wp-content/uploads/2023/10/image-1698526664-scaled.jpg`}
+                                        alt="Avatar"
+                                        sx={{
+                                            display: 'block',
+                                            width: '100%',
+                                            height: '100%',
+                                            m: { xs: 0, sm: 3, md: 5 },
+                                            maxHeight: 400,
+                                            maxWidth: 500,
+                                            objectFit: 'cover'
+                                            // margin top and bottom
+                                        }}
+                                    />
+                                )}
+                                <Typography variant="h4" sx={{
+                                    textAlign: 'left', px: { xs: 0, sm: 3, md: 5 }, py: 0,
+                                    color: theme.colors.white,
+                                    mt: 2,
+                                    fontSize: theme.fontSizes.sectionHeading,
+                                    fontFamily: theme.fonts.sectionHeading,
                                 }}>
-                                <Typography variant="h4" sx={{ textAlign: 'center' }}>
-                                    About Company
+                                    About Us
                                 </Typography>
-                                <Box component="main" sx={{ py: 3, px: { xs: 0, sm: 3, md: 5 }, textAlign: 'justify' }}>
+
+                                <Box component="main" sx={{
+                                    py: 2, px: { xs: 0, sm: 3, md: 5 }, textAlign: 'left',
+                                    width: '100%',
+                                    height: 'auto',
+                                    maxWidth: 500,
+                                    color: theme.colors.lightGrey,
+                                    fontFamily: theme.fonts.text,
+                                    fontSize: theme.fontSizes.text,
+                                }}>
                                     <Typography>
-                                        We are an experienced company based in Agra (Uttar Pradesh ) and we have created a wide distribution network to export our goods to various countries in the world. Our Production Unit well-established manufacturing unit forms the backbone of our organization. Our production unit is divided into various units, helping us to carry out operations smoothly. Customization Facility we offer customized products making it in accordance with the needs of the customers, we can made anything in marble.
+                                        Diya Handicrafts is a distinguished organization engaged in manufacturing and exporting an exclusive collection of Stone / Marble Handicrafts. Nestled in the historic city of Agra, renowned for its rich heritage in marble craftsmanship, we blend traditional artistry with modern design to create stunning marble pieces that enhance your living spaces.
+                                        <br /><br /> Established in 2019, we have scaled our business to cater the needs of the increasing demand of our products. We manufacture our products in our well established production unit which helps us carry out operations smoothly. Our skilled artisans, using time-honored techniques passed down through generations, meticulously sculpt and polish each piece to perfection.
                                     </Typography>
                                 </Box>
                             </motion.div>
                         </Item>
                     </Grid>
+
+                    {/* Image for larger screens */}
+                    {!isSmallScreen && (
+                        <Grid item xs={12} md={6} sx={{ padding: 0 }}>
+                            <Item variant='none' sx={{ height: { xs: 'auto', md: '100vh' }, borderRadius: 0, p: { xs: 2, sm: 2, md: 0 }, pb: 0, backgroundColor: theme.colors.transparent }}>
+                                <motion.div
+                                    variants={cardVariants}
+                                    initial="offscreen"
+                                    whileInView="onscreen"
+                                    viewport={{ once: true, amount: 0.8 }}
+                                    className="writeup"
+                                    id="cont1"
+                                    style={{
+                                        height: '100%',
+                                        width: '100%',
+                                    }}
+                                >
+                                    <Box
+                                        component="img"
+                                        src={`https://woodworkingnearme.com/wp-content/uploads/2023/10/image-1698526664-scaled.jpg`}
+                                        alt="Avatar"
+                                        sx={{
+                                            display: 'block',
+                                            width: '100%',
+                                            height: '100%',
+                                            objectFit: 'cover',
+                                        }}
+                                    />
+                                </motion.div>
+                            </Item>
+                        </Grid>
+                    )}
                 </Grid>
             </Box>
         </Box>

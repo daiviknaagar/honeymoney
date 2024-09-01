@@ -1,32 +1,30 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
-import { Typography } from '@mui/material';
-import TextField from '@mui/material/TextField';
+import { Button, Typography, Grid, Paper, Box, TextField } from '@mui/material';
+import theme from './theme';
 
 const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: '#fff',
-    ...theme.typography.body2,
     padding: theme.spacing(1),
     textAlign: 'center',
-    color: theme.palette.text.secondary,
-    ...theme.applyStyles('dark', {
-        backgroundColor: '#1A2027',
-    }),
 }));
 
 export default function Contact() {
     return (
-        <Box sx={{ flexGrow: 1, py: 4 }}>
+        <Box sx={{
+            flexGrow: 1, py: 4,
+            backgroundColor: theme.colors.white
+        }}>
             <Grid container spacing={2} columns={{ xs: 2, sm: 2, md: 12 }}>
                 <Grid item xs={12}>
                     <Item variant='outlined' sx={{
                         borderRadius: 0,
                         borderBottom: 0
                     }}>
-                        <Typography id="Contact Us" variant='h1' sx={{ pt: 8, pb: 3, fontSize: { xs: 70, md: 96 } }}>
+                        <Typography id="Contact Us" variant='h1' sx={{
+                            pt: 8, pb: 3, fontSize: theme.fontSizes.sectionHeading,
+                            fontFamily: theme.fonts.sectionHeading,
+                            color: theme.colors.black
+                        }}>
                             Contact Us.
                         </Typography>
                         <TextField
@@ -69,7 +67,13 @@ export default function Contact() {
                             rows={4}
                             size='small'
                             sx={{ width: { xs: 9 / 10, md: 3 / 4 }, m: 1, fontSize: '0.5rem', maxWidth: 500 }}
-                        />
+                        /><br />
+                        <Button variant='outlined'
+                            sx={{
+                                width: { xs: 9 / 10, md: 3 / 4 }, m: 1, maxWidth: 500,
+                                height: '40px', py: '8.5px', px: '14px',
+                                textAlign: 'center'
+                            }}>Send Message</Button>
                     </Item>
                 </Grid>
             </Grid>

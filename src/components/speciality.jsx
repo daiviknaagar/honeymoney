@@ -1,33 +1,29 @@
 import * as React from 'react';
 import { experimentalStyled as styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
-import { Typography } from '@mui/material';
+import { Typography, Grid, Paper, Box } from '@mui/material';
 import TipsAndUpdatesOutlinedIcon from '@mui/icons-material/TipsAndUpdatesOutlined';
 import InsertEmoticonOutlinedIcon from '@mui/icons-material/InsertEmoticonOutlined';
 import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
 import GppGoodOutlinedIcon from '@mui/icons-material/GppGoodOutlined';
-import LocalPoliceOutlinedIcon from '@mui/icons-material/LocalPoliceOutlined';
+import theme from './theme';
 
-const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: '#fff',
-    ...theme.typography.body2,
-    padding: theme.spacing(2),
+const Item = styled(Paper)(() => ({
     textAlign: 'center',
-    color: theme.palette.text.secondary,
-    ...theme.applyStyles('dark', {
-        backgroundColor: '#1A2027',
-    }),
 }));
 
 export default function Speciality() {
     return (
-        <Box sx={{ flexGrow: 1 }}>
-            <Typography variant={'h1'} sx={{ pt: 8, pb: 3, fontSize: { xs: 50, sm: 70, md: 96 }, textAlign: 'center' }}>
-                Services we Offer.
+        <Box sx={{
+            flexGrow: 1,
+            backgroundColor: theme.colors.white
+        }}>
+            <Typography variant={'h3'} sx={{
+                pt: 8, pb: 3, fontSize: '40px', textAlign: 'center',
+                fontFamily: theme.fonts.sectionHeading
+            }}>
+                Why Choose Us?
             </Typography>
-            <Grid container columns={{ xs: 2, sm: 8, md: 12 }} sx={{
+            <Grid container columns={{ xs: 4, sm: 8, md: 16 }} sx={{
                 display: 'flex',
                 justifyContent: 'center'
             }}>
@@ -35,20 +31,29 @@ export default function Speciality() {
                     <Grid item xs={2} sm={4} md={4} key={index}>
                         <Item variant='none' sx={{
                             borderRadius: 0,
-                            height: '200px'
+                            p: 2,
+                            fontFamily: theme.fonts.text
                         }}>
                             <Box
                                 sx={{
-                                    height: '150px',
                                     display: 'flex',
                                     alignItems: 'center',
-                                    justifyContent: 'center'
+                                    justifyContent: 'center',
+                                    mb: '10px',
                                 }}
                             >
                                 {special.icon}
                             </Box>
-                            <Typography variant='h6'>
-                                {special.text}
+                            <Typography variant='h7' sx={{
+                                fontWeight: 600
+                            }}>
+                                {special.text}<br />
+                            </Typography>
+                            <Typography variant='h10' sx={{
+                                display: { xs: 'none', md: 'block' },
+                                px: 3
+                            }}>
+                                {special.writeup}
                             </Typography>
                         </Item>
                     </Grid>
@@ -61,22 +66,22 @@ export default function Speciality() {
 const speciality = [
     {
         text: 'Customized Solutions',
-        icon: (<TipsAndUpdatesOutlinedIcon sx={{ fontSize: '100px' }} />)
+        icon: (<TipsAndUpdatesOutlinedIcon sx={{ fontSize: '60px' }} />),
+        writeup: 'Crafting beautiful products according to customer needs'
     },
     {
         text: 'Client Satisfaction',
-        icon: (<InsertEmoticonOutlinedIcon sx={{ fontSize: '100px' }} />)
+        icon: (<InsertEmoticonOutlinedIcon sx={{ fontSize: '60px' }} />),
+        writeup: 'Dedicated to deliver customer satisfaction'
     },
     {
         text: 'Competitive Prices',
-        icon: (<LocalOfferOutlinedIcon sx={{ fontSize: '100px' }} />)
+        icon: (<LocalOfferOutlinedIcon sx={{ fontSize: '60px' }} />),
+        writeup: 'Handcrafted by skilled artisans and quality tested'
     },
     {
         text: 'High Quality Standards',
-        icon: (<GppGoodOutlinedIcon sx={{ fontSize: '100px' }} />)
-    },
-    {
-        text: 'Ethical Business Policies',
-        icon: (<LocalPoliceOutlinedIcon sx={{ fontSize: '100px' }} />)
+        icon: (<GppGoodOutlinedIcon sx={{ fontSize: '60px' }} />),
+        writeup: 'Committed to sustainable sourcing and ethical practices'
     },
 ]

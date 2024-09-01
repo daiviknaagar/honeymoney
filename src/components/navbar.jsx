@@ -1,41 +1,30 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
+import { AppBar, Box, CssBaseline, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Button, Typography, Toolbar, useScrollTrigger } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import { createTheme } from '@mui/material/styles';
-
-const theme = createTheme({
-    palette: {
-        primary: {
-            light: '#ffc8dd',
-            main: '#cdb4db',
-            dark: '#ffafcc',
-            contrastText: '#fff',
-        },
-        secondary: {
-            light: '#ff7961',
-            main: '#f44336',
-            dark: '#ba000d',
-            contrastText: '#000',
-        },
-    },
-});
-
+import theme from './theme';
 
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Products', 'Team', 'Contact Us'];
+
+function ElevationScroll(props) {
+    const { children, window } = props;
+    const trigger = useScrollTrigger({
+        disableHysteresis: true,
+        threshold: 0,
+        target: window ? window() : undefined,
+    });
+
+    return React.cloneElement(children, {
+        elevation: trigger ? 4 : 0,
+        sx: {
+            backgroundColor: trigger ? theme.colors.black : 'transparent',
+            color: trigger ? theme.colors.white : theme.colors.black,
+            transition: ' 0.3s ease-in-out',
+            height: '60px', // Set navbar height,
+        },
+    });
+}
 
 function DrawerAppBar(props) {
     const { window } = props;
@@ -46,9 +35,14 @@ function DrawerAppBar(props) {
     };
 
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-            <Typography variant="h6" sx={{ height: 60, alignContent: 'center' }}>
-                DIYA
+        <Box onClick={handleDrawerToggle} sx={{
+            textAlign: 'center',
+        }}>
+            <Typography variant="h6" sx={{
+                height: 60, alignContent: 'center',
+                fontFamily: theme.fonts.logo,
+            }}>
+                Diya Handicrafts
             </Typography>
             <Divider />
             <List>
@@ -68,44 +62,41 @@ function DrawerAppBar(props) {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar component="nav" sx={{
-                height: 60,
-                display: 'flex',
-                justifyContent: 'center',
-                borderBottomLeftRadius: 20,
-                borderBottomRightRadius: 20,
-                backgroundColor: 'rgba(255, 255, 255, 0.3)',
-                backdropFilter: 'blur(10px)',
-                WebkitBackdropFilter: 'blur(10px)',
-            }} variant='outlined'>
-                <Toolbar sx={{ margin: 2 }}>
-                    <IconButton
-                        color="black"
-                        aria-label="open drawer"
-                        edge="start"
-                        onClick={handleDrawerToggle}
-                        sx={{ mr: 2, display: { sm: 'none' } }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography
-                        variant="h6"
-                        component="div"
-                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, color: theme.palette.secondary.contrastText }}
-                    >
-                        DIYA
-                    </Typography>
-                    <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-                        {navItems.map((item) => (
-                            <Button key={item} sx={{ color: theme.palette.secondary.contrastText }}
-                                onClick={() => document.getElementById(item).scrollIntoView({ behavior: "smooth" })}
-                            >
-                                {item}
-                            </Button>
-                        ))}
-                    </Box>
-                </Toolbar>
-            </AppBar>
+            <ElevationScroll {...props}>
+                <AppBar component="nav" variant="none">
+                    <Toolbar sx={{ height: '60px', margin: 0 }}>
+                        <IconButton
+                            aria-label="open drawer"
+                            edge="start"
+                            onClick={handleDrawerToggle}
+                            sx={{ mr: 2, display: { sm: 'none' }, color: theme.colors.grey }
+                            }
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <Typography
+                            variant="h6"
+                            component="div"
+                            sx={{
+                                flexGrow: 1, display: 'block',
+                                fontFamily: theme.fonts.logo,
+                                textAlign: { xs: 'right', sm: 'left' }
+                            }}
+                        >
+                            Diya Handicrafts
+                        </Typography>
+                        <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                            {navItems.map((item) => (
+                                <Button key={item} sx={{ color: 'inherit' }}
+                                    onClick={() => document.getElementById(item).scrollIntoView({ behavior: "smooth" })}
+                                >
+                                    {item}
+                                </Button>
+                            ))}
+                        </Box>
+                    </Toolbar>
+                </AppBar>
+            </ElevationScroll>
             <nav>
                 <Drawer
                     container={container}
@@ -128,10 +119,6 @@ function DrawerAppBar(props) {
 }
 
 DrawerAppBar.propTypes = {
-    /**
-     * Injected by the documentation to work in an iframe.
-     * You won't need it on your project.
-     */
     window: PropTypes.func,
 };
 
