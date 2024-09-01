@@ -33,7 +33,7 @@ export default function Home() {
     }, []);
 
     return (
-        <Box sx={{ flexGrow: 1 }}>
+        <Box id='Home' sx={{ flexGrow: 1 }}>
             {/* Background Image */}
             <Box sx={{
                 position: 'absolute',

@@ -5,7 +5,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import theme from './theme';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Products', 'Team', 'Contact Us'];
+const navItems = ['Home', 'About', 'Products', 'Contact Us'];
 
 function ElevationScroll(props) {
     const { children, window } = props;

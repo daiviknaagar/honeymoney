@@ -3,6 +3,7 @@ import { Box, Grid, Link, Typography, Container, IconButton } from '@mui/materia
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import theme from './theme';
 
 // Replace these with your own social media URLs
 const socialMediaLinks = {
@@ -16,19 +17,23 @@ const Footer = () => {
         <Box
             sx={{
                 bgcolor: 'background.paper',
-                color: 'grey',
+                color: theme.colors.grey,
                 py: 3,
                 pb: 6,
                 borderTop: '1px solid',
                 borderColor: 'divider',
-                backgroundColor: 'black'
+                backgroundColor: theme.colors.black,
+                fontFamily: theme.fonts.text
             }}
         >
             <Container maxWidth={false}>
                 <Grid container spacing={2} justifyContent="space-between">
                     <Grid item xs={12} sm={6} md={3}>
-                        <Typography variant="h3" color="white" gutterBottom>
-                            DIYA.
+                        <Typography variant="h4" sx={{
+                            color: theme.colors.white,
+                            fontFamily: theme.fonts.logo
+                        }} gutterBottom>
+                            Diya Handicrafts
                         </Typography>
                         {/* Add your logo component or image here */}
                     </Grid>

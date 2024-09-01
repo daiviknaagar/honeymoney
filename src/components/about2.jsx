@@ -6,22 +6,6 @@ import theme from './theme';
 
 const t = createTheme({})
 
-const cardVariants = {
-    offscreen: {
-        y: 20,
-        opacity: 0,
-        scale: 0.9,
-    },
-    onscreen: {
-        y: 0,
-        scale: 1,
-        opacity: 1,
-        transition: {
-            duration: 0.8,
-        },
-    },
-};
-
 const Item = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(2),
     textAlign: 'center',
@@ -42,10 +26,6 @@ export default function ResponsiveGrid2() {
                             display: 'flex'
                         }}>
                             <motion.div
-                                variants={cardVariants}
-                                initial="offscreen"
-                                whileInView="onscreen"
-                                viewport={{ once: true, amount: 0.8 }}
                                 className="writeup"
                                 id="cont1"
                                 style={{
@@ -107,10 +87,6 @@ export default function ResponsiveGrid2() {
                         <Grid item xs={12} md={6} sx={{ padding: 0 }}>
                             <Item variant='none' sx={{ height: { xs: 'auto', md: '100vh' }, borderRadius: 0, p: { xs: 2, sm: 2, md: 0 }, pb: 0, backgroundColor: theme.colors.transparent }}>
                                 <motion.div
-                                    variants={cardVariants}
-                                    initial="offscreen"
-                                    whileInView="onscreen"
-                                    viewport={{ once: true, amount: 0.8 }}
                                     className="writeup"
                                     id="cont1"
                                     style={{
