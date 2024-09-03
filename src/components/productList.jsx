@@ -44,7 +44,7 @@ export default function ProductList() {
                 <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, md: 16 }}>
                     {productListData.map(product => (
                         <Grid xs={4} sm={4} md={4}>
-                            <Card sx={{ maxWidth: 500, backgroundColor: "#F7EED3", boxShadow: 4, margin: 1 }}>
+                            <Card sx={{ maxWidth: 500, backgroundColor: "#F7EED3", boxShadow: 2, margin: 1 }}>
                                 {/* <CardMedia
                                     sx={{ height: 250 }}
                                     image={product.images}

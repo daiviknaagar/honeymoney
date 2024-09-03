@@ -11,15 +11,15 @@ const BackgroundBox = styled(Box)(({ image }) => ({
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  color: '#fff', // Text color
+  alignItems: 'end',
+  justifyContent: 'start',
+  color: '#674636', // Text color
 }));
 
 const PageHeading = ({ title, image }) => {
   return (
     <BackgroundBox image={image}>
-      <Typography variant="h2" component="h1" sx={{textShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)"}}>
+      <Typography variant="h3" component="h2" sx={{ ml: 3, mr: 3, p: 2, pl:3, pr:3, backgroundColor: "#FFF8E8"}}>
         {title}
       </Typography>
     </BackgroundBox>
