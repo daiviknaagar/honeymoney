@@ -59,7 +59,9 @@ function DrawerAppBar(props) {
             <Typography variant="h4" sx={{
                 alignContent: 'center',
                 fontFamily: theme.fonts.logo,
-                p: '12px',
+                p: 2,
+                ml: 2,
+                mr: 2,
                 color: theme.colors.brown
             }}>
                 Diya Handicrafts
@@ -106,7 +108,9 @@ function DrawerAppBar(props) {
                             sx={{
                                 flexGrow: 1, display: 'block',
                                 fontFamily: theme.fonts.logo,
-                                textAlign: { xs: 'right', sm: 'left' },
+                                // textAlign: { xs: 'right', sm: 'left' },
+                                mr: 3,
+                                ml: 3
                             }}
                         >
                             Diya Handicrafts
@@ -116,7 +120,6 @@ function DrawerAppBar(props) {
                                 <Button key={item.title} sx={{ color: 'inherit' }}
                                     onClick={() => {
                                         navigate(item.link, {state: {to: item.title}})
-                                        // document.getElementById(item).scrollIntoView({ behavior: "smooth" })
                                     }
                                     }
                                 >

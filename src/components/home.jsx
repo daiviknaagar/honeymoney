@@ -42,11 +42,11 @@ export default function Home() {
                 left: 0,
                 width: '100%',
                 height: '160vh', // Adjusted height to cover more area
-                backgroundImage: `url(https://images.pexels.com/photos/6213674/pexels-photo-6213674.jpeg)`,
+                backgroundImage: `url(/images/mainPageImage.jpeg)`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
-                backgroundPosition: 'center -0px', // Shifts the image 50px upwards
-                transform: `translateY(${offsetY * -0.5}px)`, // Parallax effect
+                backgroundPosition: 'center -50px', // Shifts the image 50px upwards
+                transform: `translateY(${offsetY * -0.4}px)`, // Parallax effect
                 zIndex: -1, // Ensure background image is behind content
             }} />
 
@@ -78,11 +78,12 @@ export default function Home() {
                                     lineHeight: 1.2,
                                     color: theme.colors.brown
                                 }}>
-                                    <Box>Inspired by Tradition</Box>
+                                    <Box sx={{fontWeight: '600', fontSize: theme.fontSizes.moto}}>Inspired by Tradition</Box>
                                     <Box sx={{
                                         WebkitTextStrokeColor: theme.colors.brown,
                                         color: theme.colors.transparent,
-                                        WebkitTextStrokeWidth: 2
+                                        WebkitTextStrokeWidth: { xs: 1, sm: 1, md: 2},
+                                        fontWeight: '600'
                                     }}>Crafted for Luxury</Box>
                                 </Typography>
                             </motion.div>

@@ -15,9 +15,11 @@ export default function HomePage() {
     const { state } = location;
 
     useEffect(() => {
-        const element = document.getElementById(state.to);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+        if (state) {
+            const element = document.getElementById(state.to);
+            if (element != null) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
         }
     })
 
