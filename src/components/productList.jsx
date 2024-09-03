@@ -1,50 +1,19 @@
 import * as React from 'react';
 import { Box, Button, Typography, useMediaQuery, Card, CardMedia, CardContent, CardActions } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
 import Grid from '@mui/material/Unstable_Grid2';
 import ImageCarousel from './carousel';
+import theme from './theme';
 
-const cardVariants = {
-    offscreen: {
-        y: 20,
-        opacity: 0,
-        scale: 0.9
-    },
-    onscreen: {
-        y: 0,
-        scale: 1,
-        opacity: 1
-    }
-};
 
 export default function ProductList() {
-    const theme = useTheme();
-
-    // Define breakpoints using useMediaQuery
-    const isXs = useMediaQuery(theme.breakpoints.only('xs')); // Extra small screens
-    const isSm = useMediaQuery(theme.breakpoints.only('sm')); // Small screens
-    const isMd = useMediaQuery(theme.breakpoints.only('md')); // Medium screens
-    const isLg = useMediaQuery(theme.breakpoints.up('lg'));   // Large screens and up
-
-    // Determine the number of columns based on the screen size
-    let columns;
-    if (isXs) {
-        columns = 2;
-    } else if (isSm) {
-        columns = 3;
-    } else if (isMd) {
-        columns = 4;
-    } else if (isLg) {
-        columns = 6;
-    }
 
     return (
-        <Box sx={{pt:5, backgroundColor: "#FFF8E8"}}>
+        <Box sx={{pt:5, backgroundColor: theme.colors.beige}}>
             <Box sx={{ flexGrow: 1, margin: 2}}>
                 <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, md: 16 }}>
                     {productListData.map(product => (
                         <Grid xs={4} sm={4} md={4}>
-                            <Card sx={{ maxWidth: 500, backgroundColor: "#F7EED3", boxShadow: 2, margin: 1 }}>
+                            <Card sx={{ maxWidth: 500, backgroundColor: theme.colors.lightBeige, boxShadow: 2, margin: 1 }}>
                                 {/* <CardMedia
                                     sx={{ height: 250 }}
                                     image={product.images}
@@ -62,7 +31,7 @@ export default function ProductList() {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small" sx={{color: "#674636"}}>Learn More</Button>
+                                    <Button size="small" sx={{color: theme.colors.brown}}>Learn More</Button>
                                 </CardActions>
                             </Card>
                         </Grid>

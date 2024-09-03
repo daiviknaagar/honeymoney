@@ -16,7 +16,7 @@ const cardVariants = {
     },
 };
 
-export default function ResponsiveGrid() {
+export default function OurBrandsSection() {
     return (
         <Box sx={{ flexGrow: 1, pt: 0 }}>
             <Box
