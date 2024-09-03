@@ -27,19 +27,22 @@ const cardVariants = {
 const slides = [
     {
         id: 1, content: 'Elegant Home Décor',
+        img: '/images/coaster_6.jpg',
         writeup: 'Elegant Home Décor: Enhance your interiors with our exquisite marble vases, sculptures, and decorative panels.'
     },
     {
         id: 2, content: 'Luxurious Furniture',
+        img: '/images/tray_5.jpg',
         writeup: 'Luxurious Furniture: Discover our range of marble tables, counter tops, and custom-made pieces that exude sophistication and style.'
     },
     {
         id: 3, content: 'Bespoke Creations',
+        img: '/images/photo_frame_5.jpg',
         writeup: 'Bespoke Creations: Partner with us to design unique marble products tailored to your personal vision and space requirements.'
     },
 ];
 
-export default function Carousel() {
+export default function ProductsSection() {
     const [activeIndex, setActiveIndex] = React.useState(0);
     const [fadeIn, setFadeIn] = React.useState(true);
     const isSmallScreen = useMediaQuery(t.breakpoints.down('md'));
@@ -137,13 +140,14 @@ export default function Carousel() {
                                             display: 'flex',
                                             alignItems: 'center',
                                             justifyContent: 'center',
-                                            backgroundColor: theme.colors.lightGrey,
                                             width: '100%',
                                             minHeight: 400,
-                                            fontFamily: theme.fonts.text
+                                            fontFamily: theme.fonts.text,
+                                            backgroundPosition: 'center',
+                                            backgroundSize: 'cover',
+                                            backgroundImage: `url(${slide.img})`
                                         }}
                                     >
-                                        {slide.content}
                                     </Box>
                                 </Fade>
                             ))}
@@ -267,10 +271,11 @@ export default function Carousel() {
                                         display: 'flex',
                                         alignItems: 'center',
                                         justifyContent: 'center',
-                                        backgroundColor: theme.colors.lightGrey,
+                                        backgroundPosition: 'center',
+                                        backgroundSize: 'cover',
+                                        backgroundImage: `url(${slide.img})`
                                     }}
                                 >
-                                    {slide.content}
                                 </Box>
                             </Fade>
                         ))}

@@ -1,26 +1,21 @@
-import { Toolbar } from "@mui/material";
-import ResponsiveGrid from "./components/about";
-import ResponsiveGrid2 from "./components/about2";
-import Contact from "./components/contact";
-import Footer from "./components/footer";
-import Home from "./components/home";
-import DrawerAppBar from "./components/navbar";
-import Carousel from "./components/products2";
-import Speciality from "./components/speciality";
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import HomePage from './components/homepage';
+import ProductPage from './components/productPage';
+
 
 function App() {
+
   return (
-    <div>
-      <DrawerAppBar />
-      <Home />
-      <ResponsiveGrid2 />
-      <ResponsiveGrid />
-      <Carousel />
-      {/* <Products /> */}
-      <Speciality />
-      <Contact />
-      <Footer />
-    </div>
+    <Router>
+        <Routes>
+          <Route path="/products" element={
+            <ProductPage />
+          } />
+          <Route path="/:element?" element={
+            <HomePage />
+          } />
+        </Routes>
+    </Router>
   );
 }
 

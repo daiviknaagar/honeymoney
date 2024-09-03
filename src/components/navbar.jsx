@@ -3,9 +3,26 @@ import PropTypes from 'prop-types';
 import { AppBar, Box, CssBaseline, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Button, Typography, Toolbar, useScrollTrigger } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import theme from './theme';
+import { useNavigate } from 'react-router-dom';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Products', 'Contact Us'];
+const navItems = [
+    {
+        title: 'Home',
+        link: '/'
+    },
+    {
+        title: 'About',
+        link: '/'
+    },
+    {
+        title: 'Products',
+        link: '/products'
+    },
+    {
+        title: 'Contact Us',
+        link: '/'
+    }];
 
 function ElevationScroll(props) {
     const { children, window } = props;
@@ -33,6 +50,8 @@ function DrawerAppBar(props) {
         setMobileOpen((prevState) => !prevState);
     };
 
+    const navigate = useNavigate();
+
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{
             textAlign: 'center',
@@ -48,12 +67,15 @@ function DrawerAppBar(props) {
             <Divider />
             <List>
                 {navItems.map((item) => (
-                    <ListItem key={item} disablePadding onClick={() => document.getElementById(item).scrollIntoView({ behavior: "smooth" })}>
+                    <ListItem key={item.title} disablePadding onClick={() => {
+                            navigate(item.link, {state: {to: item.title}});
+                            // document.getElementById(item.title).scrollIntoView({ behavior: "smooth" });
+                        }}>
                         <ListItemButton sx={{
                             textAlign: 'left',
                             color: theme.colors.brown
                         }}>
-                            <ListItemText primary={item} />
+                            <ListItemText primary={item.title} />
                         </ListItemButton>
                     </ListItem>
                 ))}
@@ -91,10 +113,14 @@ function DrawerAppBar(props) {
                         </Typography>
                         <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                             {navItems.map((item) => (
-                                <Button key={item} sx={{ color: 'inherit' }}
-                                    onClick={() => document.getElementById(item).scrollIntoView({ behavior: "smooth" })}
+                                <Button key={item.title} sx={{ color: 'inherit' }}
+                                    onClick={() => {
+                                        navigate(item.link, {state: {to: item.title}})
+                                        // document.getElementById(item).scrollIntoView({ behavior: "smooth" })
+                                    }
+                                    }
                                 >
-                                    {item}
+                                    {item.title}
                                 </Button>
                             ))}
                         </Box>

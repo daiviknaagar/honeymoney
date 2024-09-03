@@ -10,7 +10,7 @@ const Item = styled(Paper)(() => ({
     textAlign: 'center',
 }));
 
-export default function ResponsiveGrid2() {
+export default function AboutUsSection() {
     const isSmallScreen = useMediaQuery(t.breakpoints.down('md'));
 
     return (
