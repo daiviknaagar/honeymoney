@@ -20,7 +20,11 @@ const BackgroundBox = styled(Box)(({ image }) => ({
 const PageHeading = ({ title, image }) => {
   return (
     <BackgroundBox image={image}>
-      <Typography variant="h3" component="h2" sx={{ ml: 3, mr: 3, p: 2, pl:3, pr:3, backgroundColor: theme.colors.beige}}>
+      <Typography variant="h3" component="h2" sx={{
+        ml: 3, mr: 3, p: 2, pl: 3, pr: 3,
+        backgroundColor: theme.colors.beige,
+        fontFamily: theme.fonts.moto
+      }}>
         {title}
       </Typography>
     </BackgroundBox>
