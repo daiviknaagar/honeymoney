@@ -16,7 +16,7 @@ export default function AboutUsSection() {
     return (
         <Box id='About' sx={{
             flexGrow: 1,
-            pt: '65.98px'
+            pt: 3
         }}>
             <Box sx={{ alignContent: 'center' }}>
                 <Grid container columns={{ xs: 2, sm: 2, md: 12 }}
@@ -67,8 +67,8 @@ export default function AboutUsSection() {
                                     color: theme.colors.beige,
                                     fontSize: theme.fontSizes.sectionHeading,
                                     fontFamily: theme.fonts.sectionHeading,
-                                    pt: { xs: '12px', md: '4px' },
-                                    pb: { xs: '4px', md: '4px' },
+                                    pt: { xs: 3, md: 2 },
+                                    pb: { xs: 2, md: 2 },
                                 }}>
                                     About Us
                                 </Typography>

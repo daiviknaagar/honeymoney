@@ -18,6 +18,7 @@ const theme = {
         sectionHeading: 'Montserrat'
     },
     fontSizes: {
+        moto: { xs: 48, sm: 64, md: 96 },
         heading: { xs: 30, sm: 48, md: 84 },
         sectionHeading: { xs: 36, sm: 48, md: 60 },
     }

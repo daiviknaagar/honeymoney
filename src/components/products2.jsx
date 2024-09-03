@@ -5,6 +5,7 @@ import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { motion } from "framer-motion";
 import theme from './theme';
+import { useNavigate } from 'react-router-dom';
 
 const t = createTheme({});
 
@@ -46,6 +47,7 @@ export default function ProductsSection() {
     const [activeIndex, setActiveIndex] = React.useState(0);
     const [fadeIn, setFadeIn] = React.useState(true);
     const isSmallScreen = useMediaQuery(t.breakpoints.down('md'));
+    const navigate = useNavigate();
 
     // Handle automatic slide change
     React.useEffect(() => {
@@ -114,11 +116,11 @@ export default function ProductsSection() {
                         fontSize: theme.fontSizes.sectionHeading,
                         fontFamily: theme.fonts.sectionHeading,
                         px: { xs: 0, sm: 3, md: 5 },
-                        pt: { xs: '0px', md: '4px' },
-                        pb: { xs: '12px', md: '4px' },
+                        pt: { xs: 2, md: 2 },
+                        pb: { xs: 3, md: 2 },
                         color: theme.colors.beige,
                     }}>
-                        Products.
+                        Products
                     </Typography>
 
                     {isSmallScreen && (
@@ -239,6 +241,9 @@ export default function ProductsSection() {
                                 '&:hover': {
                                     backgroundColor: theme.colors.lightBeige,
                                 },
+                            }}
+                            onClick={() => {
+                                navigate('/products')
                             }}
                         >
                             See More
