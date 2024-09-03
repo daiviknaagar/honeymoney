@@ -17,12 +17,12 @@ const Footer = () => {
         <Box
             sx={{
                 bgcolor: 'background.paper',
-                color: theme.colors.grey,
+                color: theme.colors.lightBeige,
                 py: 3,
                 pb: 6,
                 borderTop: '1px solid',
                 borderColor: 'divider',
-                backgroundColor: theme.colors.black,
+                backgroundColor: theme.colors.brown,
                 fontFamily: theme.fonts.text
             }}
         >
@@ -30,7 +30,7 @@ const Footer = () => {
                 <Grid container spacing={2} justifyContent="space-between">
                     <Grid item xs={12} sm={6} md={3}>
                         <Typography variant="h4" sx={{
-                            color: theme.colors.white,
+                            color: theme.colors.beige,
                             fontFamily: theme.fonts.logo
                         }} gutterBottom>
                             Diya Handicrafts
@@ -38,7 +38,7 @@ const Footer = () => {
                         {/* Add your logo component or image here */}
                     </Grid>
                     <Grid item xs={6} sm={3} md={2}>
-                        <Typography variant="subtitle1" color="white" gutterBottom>
+                        <Typography variant="subtitle1" color="beige" gutterBottom>
                             PRODUCT
                         </Typography>
                         <Link href="#" color="inherit" display="block">Features</Link>
@@ -47,7 +47,7 @@ const Footer = () => {
                         <Link href="#" color="inherit" display="block">FAQ</Link>
                     </Grid>
                     <Grid item xs={6} sm={3} md={2}>
-                        <Typography variant="subtitle1" color="white" gutterBottom>
+                        <Typography variant="subtitle1" color="beige" gutterBottom>
                             COMPANY
                         </Typography>
                         <Link href="#" color="inherit" display="block">About Us</Link>
@@ -56,7 +56,7 @@ const Footer = () => {
                         <Link href="#" color="inherit" display="block">Terms of Service</Link>
                     </Grid>
                     <Grid item xs={6} sm={3} md={2}>
-                        <Typography variant="subtitle1" color="white" gutterBottom>
+                        <Typography variant="subtitle1" color="beige" gutterBottom>
                             DEVELOPERS
                         </Typography>
                         <Link href="#" color="inherit" display="block">Public API</Link>
@@ -64,7 +64,7 @@ const Footer = () => {
                         <Link href="#" color="inherit" display="block">Guides</Link>
                     </Grid>
                     <Grid item xs={6} sm={3} md={2}>
-                        <Typography variant="subtitle1" color="white" gutterBottom>
+                        <Typography variant="subtitle1" color="beige" gutterBottom>
                             SOCIAL MEDIA
                         </Typography>
                         <IconButton aria-label="Facebook" color="inherit" component="a" href={socialMediaLinks.facebook}>
@@ -78,7 +78,7 @@ const Footer = () => {
                         </IconButton>
                     </Grid>
                 </Grid>
-                <Typography variant="body2" color="white" align="center" sx={{ pt: 4 }} gutterBottoms>
+                <Typography variant="body2" color="beige" align="center" sx={{ pt: 4 }} gutterBottoms>
                     © 2024 Company Co. All rights reserved.
                 </Typography>
             </Container>

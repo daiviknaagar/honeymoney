@@ -1,3 +1,4 @@
+import { Toolbar } from "@mui/material";
 import ResponsiveGrid from "./components/about";
 import ResponsiveGrid2 from "./components/about2";
 import Contact from "./components/contact";
@@ -10,8 +11,8 @@ import Speciality from "./components/speciality";
 function App() {
   return (
     <div>
-      <Home />
       <DrawerAppBar />
+      <Home />
       <ResponsiveGrid2 />
       <ResponsiveGrid />
       <Carousel />

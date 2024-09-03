@@ -5,18 +5,21 @@ const theme = {
         darkGrey: '#333',
         grey: '#888',
         lightGrey: '#ccc',
-        transparent: 'transparent'
+        transparent: 'transparent',
+        brown: '#674636',
+        olive: '#697565',
+        beige: '#F7EED3',
+        lightBeige: '#FFF8E8'
     },
     fonts: {
         logo: 'Caveat, cursive',
-        moto: "Archivo Black",
+        moto: "Rethink Sans",
         text: 'Raleway',
         sectionHeading: 'Montserrat'
     },
     fontSizes: {
-        moto: { xs: '30px', sm: '60px', md: '70px' },
-        sectionHeading: { xs: 40, sm: 50, md: 70 },
-        text: { xs: 16, sm: 18, md: 20 },
+        heading: { xs: 30, sm: 48, md: 84 },
+        sectionHeading: { xs: 36, sm: 48, md: 60 },
     }
 };
 

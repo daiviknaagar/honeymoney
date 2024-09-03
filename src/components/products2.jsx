@@ -83,11 +83,11 @@ export default function Carousel() {
             <Box sx={{
                 position: 'relative',
                 width: { xs: '100%', sm: '100%', md: '50%' },
-                height: { xs: 'auto', sm: 'auto', md: 'auto' },
-                minHeight: { xs: 'auto', sm: 'auto', md: '80vh' },
-                backgroundColor: theme.colors.black,
+                backgroundColor: theme.colors.olive,
                 textAlign: { xs: 'center', md: 'left' },
-                p: 2,
+                px: '26px',
+                pt: { xs: '12px', md: '48px' },
+                pb: { xs: '26px', md: '60px' },
                 display: { xs: 'block', md: 'flex' },
                 justifyContent: 'center'
             }} >
@@ -103,23 +103,24 @@ export default function Carousel() {
                         flexDirection: 'column',
                         padding: 0,
                         alignItems: 'left',
-                        p: 10,
+                        px: 10,
                         justifyContent: 'center',
                     }}
                 >
                     <Typography variant={'h4'} sx={{
                         fontSize: theme.fontSizes.sectionHeading,
                         fontFamily: theme.fonts.sectionHeading,
-                        mb: { xs: 2, sm: 3, md: 0 },
                         px: { xs: 0, sm: 3, md: 5 },
-                        color: theme.colors.white,
+                        pt: { xs: '0px', md: '4px' },
+                        pb: { xs: '12px', md: '4px' },
+                        color: theme.colors.beige,
                     }}>
                         Products.
                     </Typography>
 
                     {isSmallScreen && (
                         <Box sx={{
-                            position: 'relative', width: '100%', height: 'auto', mb: 2, display: 'flex',
+                            position: 'relative', width: '100%', height: 'auto', display: 'flex',
                             justifyContent: 'center',
                             p: 0
                         }}>
@@ -138,9 +139,7 @@ export default function Carousel() {
                                             justifyContent: 'center',
                                             backgroundColor: theme.colors.lightGrey,
                                             width: '100%',
-                                            height: '40vh',
-                                            maxHeight: 400,
-                                            maxWidth: 500,
+                                            minHeight: 400,
                                             fontFamily: theme.fonts.text
                                         }}
                                     >
@@ -172,35 +171,35 @@ export default function Carousel() {
                         }}>
                             <Box sx={{
                                 fontFamily: theme.fonts.text,
-                                maxWidth: '500px'
+                                maxWidth: '500px',
                             }}>
                                 <Typography sx={{
-                                    mt: 1,
-                                    fontSize: theme.fontSizes.text,
-                                    color: '#eee',
-                                    px: { xs: 0, sm: 3, md: 5 }
+                                    color: theme.colors.lightBeige,
+                                    px: { xs: 0, sm: 3, md: 5 },
+                                    pt: '4px',
                                 }}>
                                     We specialize in a diverse range of marble products, including:
                                 </Typography>
                                 <Typography sx={{
-                                    mt: 1,
-                                    mb: 2,
-                                    fontSize: { xs: 12, sm: 14, md: 16 },
-                                    color: theme.colors.lightGrey,
-                                    px: { xs: 2, sm: 5, md: 7 }
+                                    color: theme.colors.lightBeige,
+                                    px: { xs: 0, sm: 3, md: 5 },
+                                    pb: '4px',
                                 }}>
-                                    <span style={{
-                                        color: '#eee',
-                                        fontWeight: '600'
-                                    }}>Elegant Home Décor:</span> Enhance your interiors with our exquisite marble vases, sculptures, and decorative panels.
-                                    <br /><span style={{
-                                        color: '#eee',
-                                        fontWeight: '600'
-                                    }}>Luxurious Furniture:</span> Discover our range of marble tables, counter tops, and custom-made pieces that exude sophistication and style.
-                                    <br /><span style={{
-                                        color: '#eee',
-                                        fontWeight: '600'
-                                    }}>Bespoke Creations:</span> Partner with us to design unique marble products tailored to your personal vision and space requirements.
+                                    <Box>
+                                        <span style={{
+                                            color: theme.colors.lightBeige,
+                                        }}>Elegant Home Décor:</span> Enhance your interiors with our exquisite marble vases, sculptures, and decorative panels.
+                                    </Box>
+                                    <Box>
+                                        <span style={{
+                                            color: theme.colors.lightBeige,
+                                        }}>Luxurious Furniture:</span> Discover our range of marble tables, counter tops, and custom-made pieces that exude sophistication and style.
+                                    </Box>
+                                    <Box>
+                                        <span style={{
+                                            color: theme.colors.lightBeige,
+                                        }}>Bespoke Creations:</span> Partner with us to design unique marble products tailored to your personal vision and space requirements.
+                                    </Box>
                                 </Typography>
                                 {/* {
                             slides.map((slide, index) => (
@@ -222,63 +221,70 @@ export default function Carousel() {
                     <Typography sx={{
                         textAlign: { xs: 'center', md: 'left' }
                     }}>
-                        <Button variant='outlined' sx={{
-                            // left: { xs: 2, sm: 3, md: 0 },
-                            // right: { xs: 2, sm: 3, md: 0 },
-                            borderColor: theme.colors.white,
-                            color: theme.colors.white,
-                            height: '40px',
-                            width: '200px',
-                            borderRadius: 0,
-                            mb: 2,
-                            mx: '40px',
-                            fontFamily: theme.fonts.text
-                        }}>
+                        <Button
+                            variant="none"
+                            sx={{
+                                backgroundColor: theme.colors.beige,
+                                color: theme.colors.brown,
+                                height: '40px',
+                                width: '200px',
+                                borderRadius: 0,
+                                mx: '40px',
+                                mt: { xs: '22px', md: '18px' },
+                                fontFamily: theme.fonts.text,
+                                '&:hover': {
+                                    backgroundColor: theme.colors.lightBeige,
+                                },
+                            }}
+                        >
                             See More
                         </Button>
+
                     </Typography>
                 </motion.div>
             </Box>
 
-            {!isSmallScreen && (
-                <Box sx={{
-                    position: 'relative', width: { xs: '100%', sm: '100%', md: '50%' }, height: '80vh',
-                    backgroundColor: theme.colors.white,
-                }}>
-                    {slides.map((slide, index) => (
-                        <Fade
-                            key={slide.id}
-                            in={index === activeIndex && fadeIn}
-                            timeout={500}
-                            unmountOnExit
-                        >
-                            <Box
-                                sx={{
-                                    position: 'absolute',
-                                    top: 0,
-                                    right: 0,
-                                    width: '100%',
-                                    height: '100%',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    backgroundColor: theme.colors.lightGrey,
-                                }}
+            {
+                !isSmallScreen && (
+                    <Box sx={{
+                        position: 'relative', width: { xs: '100%', sm: '100%', md: '50%' },
+                        backgroundColor: theme.colors.white,
+                    }}>
+                        {slides.map((slide, index) => (
+                            <Fade
+                                key={slide.id}
+                                in={index === activeIndex && fadeIn}
+                                timeout={500}
+                                unmountOnExit
                             >
-                                {slide.content}
-                            </Box>
-                        </Fade>
-                    ))}
-                    <NavigateBeforeIcon
-                        onClick={handlePrev}
-                        sx={{ position: 'absolute', top: '50%', left: '10px', transform: 'translateY(-50%)', cursor: 'pointer' }}
-                    />
-                    <NavigateNextIcon
-                        onClick={handleNext}
-                        sx={{ position: 'absolute', top: '50%', right: '10px', transform: 'translateY(-50%)', cursor: 'pointer' }}
-                    />
-                </Box>
-            )}
-        </Box>
+                                <Box
+                                    sx={{
+                                        position: 'absolute',
+                                        top: 0,
+                                        right: 0,
+                                        width: '100%',
+                                        height: '100%',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        backgroundColor: theme.colors.lightGrey,
+                                    }}
+                                >
+                                    {slide.content}
+                                </Box>
+                            </Fade>
+                        ))}
+                        <NavigateBeforeIcon
+                            onClick={handlePrev}
+                            sx={{ position: 'absolute', top: '50%', left: '10px', transform: 'translateY(-50%)', cursor: 'pointer' }}
+                        />
+                        <NavigateNextIcon
+                            onClick={handleNext}
+                            sx={{ position: 'absolute', top: '50%', right: '10px', transform: 'translateY(-50%)', cursor: 'pointer' }}
+                        />
+                    </Box>
+                )
+            }
+        </Box >
     );
 }

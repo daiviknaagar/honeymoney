@@ -3,6 +3,7 @@ import { experimentalStyled as styled } from '@mui/material/styles';
 import { Box, Paper, Grid, Typography } from '@mui/material';
 import { motion } from "framer-motion";
 import theme from './theme';
+import SouthIcon from '@mui/icons-material/South';
 
 const cardVariants = {
     offscreen: {
@@ -40,14 +41,15 @@ export default function Home() {
                 top: 0,
                 left: 0,
                 width: '100%',
-                height: '150vh', // Adjusted height to cover more area
+                height: '160vh', // Adjusted height to cover more area
                 backgroundImage: `url(https://images.pexels.com/photos/6213674/pexels-photo-6213674.jpeg)`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
-                backgroundPosition: 'center',
+                backgroundPosition: 'center -0px', // Shifts the image 50px upwards
                 transform: `translateY(${offsetY * -0.5}px)`, // Parallax effect
                 zIndex: -1, // Ensure background image is behind content
             }} />
+
 
             {/* Content */}
             <Box sx={{ position: 'relative', height: '100vh' }}>
@@ -71,17 +73,28 @@ export default function Home() {
                                 }}>
                                 <Typography sx={{
                                     textAlign: { xs: 'center', md: 'right' },
-                                    color: theme.colors.black,
-                                    // fontFamily: theme.fonts.moto,
-                                    fontSize: theme.fontSizes.moto
+                                    fontFamily: theme.fonts.moto,
+                                    fontSize: theme.fontSizes.heading,
+                                    lineHeight: 1.2,
+                                    color: theme.colors.brown
                                 }}>
-                                    Inspired by Tradition
-                                    <br />Crafted for Luxury
+                                    <Box>Inspired by Tradition</Box>
+                                    <Box sx={{
+                                        WebkitTextStrokeColor: theme.colors.brown,
+                                        color: theme.colors.transparent,
+                                        WebkitTextStrokeWidth: 2
+                                    }}>Crafted for Luxury</Box>
                                 </Typography>
                             </motion.div>
                         </Item>
                     </Grid>
                 </Grid>
+                <SouthIcon sx={{
+                    position: 'absolute',
+                    bottom: '20px',
+                    left: '50%',
+                    color: theme.colors.brown
+                }}></SouthIcon>
             </Box>
         </Box>
     );

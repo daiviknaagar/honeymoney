@@ -18,10 +18,9 @@ function ElevationScroll(props) {
     return React.cloneElement(children, {
         elevation: trigger ? 4 : 0,
         sx: {
-            backgroundColor: trigger ? theme.colors.black : 'transparent',
-            color: trigger ? theme.colors.white : theme.colors.black,
+            backgroundColor: trigger ? theme.colors.beige : 'transparent',
+            color: trigger ? theme.colors.brown : theme.colors.brown,
             transition: ' 0.3s ease-in-out',
-            height: '60px', // Set navbar height,
         },
     });
 }
@@ -38,9 +37,11 @@ function DrawerAppBar(props) {
         <Box onClick={handleDrawerToggle} sx={{
             textAlign: 'center',
         }}>
-            <Typography variant="h6" sx={{
-                height: 60, alignContent: 'center',
+            <Typography variant="h4" sx={{
+                alignContent: 'center',
                 fontFamily: theme.fonts.logo,
+                p: '12px',
+                color: theme.colors.brown
             }}>
                 Diya Handicrafts
             </Typography>
@@ -48,7 +49,10 @@ function DrawerAppBar(props) {
             <List>
                 {navItems.map((item) => (
                     <ListItem key={item} disablePadding onClick={() => document.getElementById(item).scrollIntoView({ behavior: "smooth" })}>
-                        <ListItemButton sx={{ textAlign: 'left' }}>
+                        <ListItemButton sx={{
+                            textAlign: 'left',
+                            color: theme.colors.brown
+                        }}>
                             <ListItemText primary={item} />
                         </ListItemButton>
                     </ListItem>
@@ -64,7 +68,7 @@ function DrawerAppBar(props) {
             <CssBaseline />
             <ElevationScroll {...props}>
                 <AppBar component="nav" variant="none">
-                    <Toolbar sx={{ height: '60px', margin: 0 }}>
+                    <Toolbar sx={{ margin: 0, p: 1.5 }}>
                         <IconButton
                             aria-label="open drawer"
                             edge="start"
@@ -75,12 +79,12 @@ function DrawerAppBar(props) {
                             <MenuIcon />
                         </IconButton>
                         <Typography
-                            variant="h6"
+                            variant="h4"
                             component="div"
                             sx={{
                                 flexGrow: 1, display: 'block',
                                 fontFamily: theme.fonts.logo,
-                                textAlign: { xs: 'right', sm: 'left' }
+                                textAlign: { xs: 'right', sm: 'left' },
                             }}
                         >
                             Diya Handicrafts

@@ -15,7 +15,8 @@ export default function Speciality() {
     return (
         <Box sx={{
             flexGrow: 1,
-            backgroundColor: theme.colors.white
+            backgroundColor: theme.colors.white,
+            pb: 7
         }}>
             <Typography variant={'h3'} sx={{
                 pt: 8, pb: 3, fontSize: '40px', textAlign: 'center',
