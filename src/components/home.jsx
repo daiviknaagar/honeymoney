@@ -4,6 +4,7 @@ import { Box, Paper, Grid, Typography } from '@mui/material';
 import { motion } from "framer-motion";
 import theme from './theme';
 import SouthIcon from '@mui/icons-material/South';
+import { ROOT_PATH } from '../constants/constants';
 
 const cardVariants = {
     offscreen: {
@@ -42,7 +43,7 @@ export default function Home() {
                 left: 0,
                 width: '100%',
                 height: '160vh', // Adjusted height to cover more area
-                backgroundImage: `url(/images/mainPageImage.jpeg)`,
+                backgroundImage: `url(${ROOT_PATH}/images/mainPageImage.jpeg)`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundPosition: 'center -50px', // Shifts the image 50px upwards

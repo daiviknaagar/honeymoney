@@ -2,6 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import { Box, IconButton } from '@mui/material';
 import { ChevronLeft, ChevronRight } from '@mui/icons-material';
+import { ROOT_PATH } from '../constants/constants';
 
 const ImageCarousel = ({ images }) => {
   const settings = {
@@ -17,7 +18,7 @@ const ImageCarousel = ({ images }) => {
     <Box sx={{position: 'relative', mb: 2}}>
       <Slider {...settings}>
         {images.map((image, index) => (
-          <Box key={index} component="img" src={image} sx={{ width: '100%', height: 250, maxHeight: 250, objectFit: "cover"}} />
+          <Box key={index} component="img" src={ROOT_PATH + image} sx={{ width: '100%', height: 250, maxHeight: 250, objectFit: "cover"}} />
         ))}
       </Slider>
     </Box>

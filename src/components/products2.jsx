@@ -6,6 +6,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { motion } from "framer-motion";
 import theme from './theme';
 import { useNavigate } from 'react-router-dom';
+import { ROOT_PATH } from '../constants/constants';
 
 const t = createTheme({});
 
@@ -147,7 +148,7 @@ export default function ProductsSection() {
                                             fontFamily: theme.fonts.text,
                                             backgroundPosition: 'center',
                                             backgroundSize: 'cover',
-                                            backgroundImage: `url(${slide.img})`
+                                            backgroundImage: `url(${ROOT_PATH + slide.img})`
                                         }}
                                     >
                                     </Box>
@@ -278,7 +279,7 @@ export default function ProductsSection() {
                                         justifyContent: 'center',
                                         backgroundPosition: 'center',
                                         backgroundSize: 'cover',
-                                        backgroundImage: `url(${slide.img})`
+                                        backgroundImage: `url(${ROOT_PATH + slide.img})`
                                     }}
                                 >
                                 </Box>
