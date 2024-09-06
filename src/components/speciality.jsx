@@ -16,10 +16,10 @@ export default function Speciality() {
         <Box sx={{
             flexGrow: 1,
             backgroundColor: theme.colors.white,
-            pb: 7
+            pb: 8
         }}>
             <Typography variant={'h3'} sx={{
-                pt: 8, pb: 3, fontSize: '40px', textAlign: 'center',
+                pt: 8, pb: 4, fontSize: '40px', textAlign: 'center',
                 fontFamily: theme.fonts.sectionHeading
             }}>
                 Why Choose Us?

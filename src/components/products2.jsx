@@ -57,7 +57,7 @@ export default function ProductsSection() {
             setTimeout(() => {
                 setActiveIndex((prevIndex) => (prevIndex + 1) % slides.length);
                 setFadeIn(true);
-            }, 500);
+            }, 0);
         }, 3000); // Change slide every 3 seconds
 
         return () => clearInterval(interval); // Cleanup on component unmount
@@ -68,7 +68,7 @@ export default function ProductsSection() {
         setTimeout(() => {
             setActiveIndex((prevIndex) => (prevIndex + 1) % slides.length);
             setFadeIn(true);
-        }, 500);
+        }, 0);
     };
 
     const handlePrev = () => {
@@ -78,7 +78,7 @@ export default function ProductsSection() {
                 prevIndex === 0 ? slides.length - 1 : prevIndex - 1
             );
             setFadeIn(true);
-        }, 500);
+        }, 0);
     };
 
     return (
@@ -134,7 +134,7 @@ export default function ProductsSection() {
                                 <Fade
                                     key={slide.id}
                                     in={index === activeIndex && fadeIn}
-                                    timeout={500}
+                                    timeout={10}
                                     unmountOnExit
                                 >
                                     <Box
@@ -264,7 +264,7 @@ export default function ProductsSection() {
                             <Fade
                                 key={slide.id}
                                 in={index === activeIndex && fadeIn}
-                                timeout={500}
+                                timeout={50}
                                 unmountOnExit
                             >
                                 <Box

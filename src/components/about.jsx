@@ -18,16 +18,18 @@ const cardVariants = {
 
 export default function OurBrandsSection() {
     return (
-        <Box sx={{ flexGrow: 1, pt: 0 }}>
             <Box
                 sx={{
                     borderRadius: 0,
                     backgroundColor: theme.colors.white,
-                    height: '50vh',
                     alignContent: 'center',
-                    p: '16px',
+                    mt: 8,
+                    mb: 8
                 }}
             >
+                <Typography variant={'h3'} sx={{ pb: 4, fontSize: '40px', textAlign: 'center', fontFamily: theme.fonts.sectionHeading}}>
+                    Why Choose Us?
+                </Typography>
                 <motion.div
                     variants={cardVariants}
                     initial="offscreen"
@@ -43,12 +45,13 @@ export default function OurBrandsSection() {
                             textAlign: 'center',
                             fontFamily: theme.fonts.logo,
                             fontSize: theme.fontSizes.sectionHeading,
+                            mt: 4,
+                            mb: 8
                         }}
                     >
                         Diya Handicrafts
                     </Typography>
                 </motion.div>
             </Box>
-        </Box>
     );
 }

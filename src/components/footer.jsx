@@ -71,7 +71,7 @@ const Footer = () => {
                     </Grid>
                 </Grid>
                 <Typography variant="body2" color="beige" align="center" sx={{ pt: 4 }} gutterBottoms>
-                    © 2024 Diya Handicrafts Pvt. Ltd. All rights reserved.
+                    © 2024 Diya Handicrafts. All rights reserved.
                 </Typography>
             </Container>
         </Box>

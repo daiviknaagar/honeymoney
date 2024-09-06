@@ -47,25 +47,13 @@ const productListData = [
   {
     title: "Chopping Board",
     description: "Elegant and durable board for chopping and preparing ingredients with a luxurious touch.",
-    images: ["/images/chopping_board_1.jpg", "/images/chopping_board_2.jpg", "/images/chopping_board_3.jpg", "/images/chopping_board_4.jpg", "/images/chopping_board_5.jpg", "/images/chopping_board_6.jpg", "/images/chopping_board_7.jpg", "/images/chopping_board_.jpg", "/images/chopping_board_9.jpg"],
+    images: ["/images/chopping_board_1.jpg", "/images/chopping_board_2.jpg", "/images/chopping_board_3.jpg", "/images/chopping_board_4.jpg", "/images/chopping_board_5.jpg", "/images/chopping_board_6.jpg", "/images/chopping_board_7.jpg", "/images/chopping_board_8.jpg", "/images/chopping_board_9.jpg"],
     link: ""
   },
   {
     title: "Coaster Sets",
     description: "Set of refined coasters designed to protect surfaces while adding a touch of marble elegance.",
     images: ["/images/coaster_1.jpg", "/images/coaster_2.jpg", "/images/coaster_3.jpg", "/images/coaster_4.jpg", "/images/coaster_5.jpg", "/images/coaster_6.jpg", "/images/coaster_7.jpg", "/images/coaster_8.jpg", "/images/coaster_9.jpg"],
-    link: ""
-  },
-  {
-    title: "Serving Board",
-    description: "Stylish serving board perfect for presenting cheeses, charcuterie, and appetizers.",
-    images: ["/images/tray_3.jpg", "/images/tray_8.jpg"],
-    link: ""
-  },
-  {
-    title: "Spoon Rest",
-    description: "Chic and practical rest to keep your cooking utensils clean and within reach.",
-    images: ["/images/utensil_holder_1.jpg"],
     link: ""
   },
   {
@@ -107,7 +95,7 @@ const productListData = [
   {
     title: "Tray",
     description: "Versatile tray for serving drinks or organizing items with a sleek marble touch.",
-    images: ["/images/tray_1.jpg", "/images/tray_2.jpg", "/images/tray_4.jpg", "/images/tray_5.jpg", "/images/tray_6.jpg", "/images/tray_7.jpg"],
+    images: ["/images/tray_1.jpg", "/images/tray_2.jpg", "/images/tray_4.jpg", "/images/tray_5.jpg", "/images/tray_6.jpg", "/images/tray_7.jpg", "/images/tray_3.jpg", "/images/tray_8.jpg"],
     link: ""
   },
   // {
@@ -185,12 +173,12 @@ const productListData = [
   {
     title: "Utensil Holder",
     description: "Marble utensil holder, designed to keep your tools stylishly organized and within reach.",
-    images: ["/images/utensil_holder_2.jpg", "/images/utensil_holder_3.jpg", "/images/utensil_holder_4.jpg", "/images/utensil_holder_5.jpg", "/images/utensil_holder_6.jpg"],
+    images: ["/images/utensil_holder_2.jpg", "/images/utensil_holder_3.jpg", "/images/utensil_holder_4.jpg", "/images/utensil_holder_5.jpg", "/images/utensil_holder_6.jpg", "/images/utensil_holder_1.jpg"],
     link: ""
   },
   {
     title: "Tables",
-    description: "Transform your space with our compact tables, where vibrant resin patterns meet sleek, functional design.",
+    description: "Transform your space with our compact tables made from agate stone & marble pattern",
     images: ["/images/table_1.jpg", "/images/table_2.jpg", "/images/table_3.jpg", "/images/table_4.jpg", "/images/table_5.jpg", "/images/table_6.jpg"],
     link: ""
   },
