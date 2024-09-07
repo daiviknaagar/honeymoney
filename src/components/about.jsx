@@ -46,7 +46,7 @@ export default function OurBrandsSection() {
                         component="img"
                         src={ROOT_PATH + "/images/brands/decorEnvogueLogo.jpeg"}
                         sx={{
-                            height: '300px',
+                            height: '200px',
                             mt: 4,
                             mb: 4
                         }}
