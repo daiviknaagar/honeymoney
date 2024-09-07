@@ -1,7 +1,9 @@
 import * as React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Link } from '@mui/material';
 import { motion } from "framer-motion";
 import theme from './theme';
+import { ROOT_PATH } from '../constants/constants';
+
 
 const cardVariants = {
     offscreen: {
@@ -23,35 +25,44 @@ export default function OurBrandsSection() {
                     borderRadius: 0,
                     backgroundColor: theme.colors.white,
                     alignContent: 'center',
+                    justifyContent: 'center',
                     mt: 8,
                     mb: 8
                 }}
             >
                 <Typography variant={'h3'} sx={{ pb: 4, fontSize: '40px', textAlign: 'center', fontFamily: theme.fonts.sectionHeading}}>
-                    Why Choose Us?
+                    Our Brands
                 </Typography>
-                <motion.div
+                <motion.Box
                     variants={cardVariants}
                     initial="offscreen"
                     whileInView="onscreen"
                     viewport={{ once: true, amount: 0.8 }}
                     className="writeup"
                     id="cont1"
-                    style={{ display: 'flex', flexDirection: 'column' }}
+                    style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}
                 >
-                    <Typography
-                        variant="h4"
+                    <Box
+                        component="img"
+                        src={ROOT_PATH + "/images/brands/decorEnvogueLogo.jpeg"}
                         sx={{
-                            textAlign: 'center',
-                            fontFamily: theme.fonts.logo,
-                            fontSize: theme.fontSizes.sectionHeading,
+                            height: '300px',
                             mt: 4,
-                            mb: 8
+                            mb: 4
                         }}
                     >
-                        Diya Handicrafts
+                    </Box>
+                    <Typography
+                        variant="h5"
+                        sx={{
+                            textAlign: 'center',
+                            fontFamily: theme.fonts.text,
+                            mb: 4
+                        }}
+                    >
+                        Available on <Link href="https://www.amazon.com/stores/page/B7366461-CD62-4421-971D-BA746D4515C4" color="inherit">Amazon</Link> and <Link href="http://www.etsy.com/shop/Decorenvogue" color="inherit">Etsy</Link>
                     </Typography>
-                </motion.div>
+                </motion.Box>
             </Box>
     );
 }
