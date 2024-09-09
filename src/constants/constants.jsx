@@ -1,1 +1,1 @@
-export const ROOT_PATH = "/honeymoney.github.io";
+export const ROOT_PATH = "";
