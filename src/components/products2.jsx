@@ -29,17 +29,17 @@ const cardVariants = {
 const slides = [
     {
         id: 1, content: 'Elegant Home Décor',
-        img: '/images/coaster_6.jpg',
+        img: '/images/Coasters/Coaster6.jpg',
         writeup: 'Elegant Home Décor: Enhance your interiors with our exquisite marble vases, sculptures, and decorative panels.'
     },
     {
         id: 2, content: 'Luxurious Furniture',
-        img: '/images/tray_5.jpg',
+        img: '/images/ChoppingBoards/ChoppingBoard8.jpg',
         writeup: 'Luxurious Furniture: Discover our range of marble tables, counter tops, and custom-made pieces that exude sophistication and style.'
     },
     {
         id: 3, content: 'Bespoke Creations',
-        img: '/images/photo_frame_5.jpg',
+        img: '/images/Trays/Tray7.jpg',
         writeup: 'Bespoke Creations: Partner with us to design unique marble products tailored to your personal vision and space requirements.'
     },
 ];

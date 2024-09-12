@@ -47,19 +47,37 @@ const productListData = [
   {
     title: "Chopping Board",
     description: "Elegant and durable board for chopping and preparing ingredients with a luxurious touch.",
-    images: ["/images/chopping_board_1.jpg", "/images/chopping_board_2.jpg", "/images/chopping_board_3.jpg", "/images/chopping_board_4.jpg", "/images/chopping_board_5.jpg", "/images/chopping_board_6.jpg", "/images/chopping_board_7.jpg", "/images/chopping_board_8.jpg", "/images/chopping_board_9.jpg"],
+    images: ["/images/ChoppingBoards/ChoppingBoard1.jpg", "/images/ChoppingBoards/ChoppingBoard2.jpg", "/images/ChoppingBoards/ChoppingBoard3.jpg", "/images/ChoppingBoards/ChoppingBoard4.jpg", "/images/ChoppingBoards/ChoppingBoard5.jpg", "/images/ChoppingBoards/ChoppingBoard6.jpg", "/images/ChoppingBoards/ChoppingBoard7.jpg", "/images/ChoppingBoards/ChoppingBoard8.jpg", "/images/ChoppingBoards/ChoppingBoard9.jpg"],
     link: ""
   },
   {
     title: "Coaster Sets",
     description: "Set of refined coasters designed to protect surfaces while adding a touch of marble elegance.",
-    images: ["/images/coaster_1.jpg", "/images/coaster_2.jpg", "/images/coaster_3.jpg", "/images/coaster_4.jpg", "/images/coaster_5.jpg", "/images/coaster_6.jpg", "/images/coaster_7.jpg", "/images/coaster_8.jpg", "/images/coaster_9.jpg"],
+    images: ["/images/Coasters/Coaster1.jpg", "/images/Coasters/Coaster2.jpg", "/images/Coasters/Coaster3.jpg", "/images/Coasters/Coaster4.jpg", "/images/Coasters/Coaster5.jpg", "/images/Coasters/Coaster6.jpg", "/images/Coasters/Coaster7.jpg", "/images/Coasters/Coaster8.jpg", "/images/Coasters/Coaster9.jpg"],
     link: ""
   },
   {
     title: "Utility Bowls",
     description: "Organize in style, perfect for holding jewelry, keys, or small kitchen essentials with a touch of sophistication.",
-    images: ["/images/bowl_1.jpg", "/images/bowl_2.jpg", "/images/bowl_3.jpg", "/images/bowl_4.jpg"],
+    images: ["/images/Bowls/Bowl1.jpg", "/images/Bowls/Bowl2.jpg", "/images/Bowls/Bowl3.jpg", "/images/Bowls/Bowl4.jpg"],
+    link: ""
+  },
+  {
+    title: "Vase",
+    description: "Elegant decorative vessels crafted from marble, perfect for displaying flowers or as standalone art pieces.",
+    images: ["/images/Vases/Vase1.jpg", "/images/Vases/Vase2.jpg", "/images/Vases/Vase3.jpg", "/images/Vases/Vase4.jpg", "/images/Vases/Vase5.jpg"],
+    link: ""
+  },
+  {
+    title: "Figurine",
+    description: "Intricate sculptures made from marble, often depicting animals, people, or abstract forms, adding a touch of sophistication to any space.",
+    images: ["/images/Figurines/Figurine1.jpg", "/images/Figurines/Figurine2.jpg", "/images/Figurines/Figurine3.jpg", "/images/Figurines/Figurine4.jpg", "/images/Figurines/Figurine5.jpg", "/images/Figurines/Figurine6.jpg", "/images/Figurines/Figurine7.jpg", "/images/Figurines/Figurine8.jpg"],
+    link: ""
+  },
+  {
+    title: "Box",
+    description: "Stylish and functional marble containers, ideal for storing small items or as decorative accents.",
+    images: ["/images/Boxes/Box1.jpg", "/images/Boxes/Box2.jpg", "/images/Boxes/Box3.jpg", "/images/Boxes/Box4.jpg"],
     link: ""
   },
   // {
@@ -95,7 +113,7 @@ const productListData = [
   {
     title: "Tray",
     description: "Versatile tray for serving drinks or organizing items with a sleek marble touch.",
-    images: ["/images/tray_1.jpg", "/images/tray_2.jpg", "/images/tray_4.jpg", "/images/tray_5.jpg", "/images/tray_6.jpg", "/images/tray_7.jpg", "/images/tray_3.jpg", "/images/tray_8.jpg"],
+    images: ["/images/Trays/Tray2.jpg", "/images/Trays/Tray4.jpg", "/images/Trays/Tray5.jpg", "/images/Trays/Tray6.jpg", "/images/Trays/Tray7.jpg", "/images/Trays/Tray3.jpg", "/images/Trays/Tray8.jpg", "/images/Trays/Tray9.jpg", "/images/Trays/Tray10.jpg"],
     link: ""
   },
   // {
@@ -167,19 +185,19 @@ const productListData = [
   {
     title: "Photo Frames",
     description: "Elegant frames designed to showcase your cherished memories with a touch of luxury.",
-    images: ["/images/photo_frame_1.jpg", "/images/photo_frame_2.jpg", "/images/photo_frame_3.jpg", "/images/photo_frame_4.jpg", "/images/photo_frame_5.jpg", "/images/photo_frame_6.jpg", "/images/photo_frame_7.jpg", "/images/photo_frame_8.jpg", "/images/photo_frame_9.jpg"],
+    images: ["/images/PhotoFrames/PhotoFrame1.jpg", "/images/PhotoFrames/PhotoFrame2.jpg", "/images/PhotoFrames/PhotoFrame3.jpg", "/images/PhotoFrames/PhotoFrame4.jpg", "/images/PhotoFrames/PhotoFrame5.jpg", "/images/PhotoFrames/PhotoFrame6.jpg", "/images/PhotoFrames/PhotoFrame7.jpg", "/images/PhotoFrames/PhotoFrame8.jpg", "/images/PhotoFrames/PhotoFrame9.jpg"],
     link: ""
   },
   {
     title: "Utensil Holder",
     description: "Marble utensil holder, designed to keep your tools stylishly organized and within reach.",
-    images: ["/images/utensil_holder_2.jpg", "/images/utensil_holder_3.jpg", "/images/utensil_holder_4.jpg", "/images/utensil_holder_5.jpg", "/images/utensil_holder_6.jpg", "/images/utensil_holder_1.jpg"],
+    images: ["/images/UtensilHolders/UtensilHolder2.jpg", "/images/UtensilHolders/UtensilHolder3.jpg", "/images/UtensilHolders/UtensilHolder4.jpg", "/images/UtensilHolders/UtensilHolder5.jpg", "/images/UtensilHolders/UtensilHolder6.jpg", "/images/UtensilHolders/UtensilHolder1.jpg", "/images/UtensilHolders/UtensilHolder7.jpg", "/images/UtensilHolders/UtensilHolder8.jpg", "/images/UtensilHolders/UtensilHolder9.jpg"],
     link: ""
   },
   {
-    title: "Tables",
+    title: "Accent Tables",
     description: "Transform your space with our compact tables made from agate stone & marble pattern",
-    images: ["/images/table_1.jpg", "/images/table_2.jpg", "/images/table_3.jpg", "/images/table_4.jpg", "/images/table_5.jpg", "/images/table_6.jpg"],
+    images: ["/images/Tables/Table3.jpg", "/images/Tables/Table1.jpg", "/images/Tables/Table2.jpg", "/images/Tables/Table4.jpg", "/images/Tables/Table5.jpg", "/images/Tables/Table6.jpg"],
     link: ""
   },
   // {

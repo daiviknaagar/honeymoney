@@ -33,13 +33,8 @@ export default function OurBrandsSection() {
                 <Typography variant={'h3'} sx={{ pb: 4, fontSize: '40px', textAlign: 'center', fontFamily: theme.fonts.sectionHeading}}>
                     Our Brands
                 </Typography>
-                <motion.Box
+                <Box
                     variants={cardVariants}
-                    initial="offscreen"
-                    whileInView="onscreen"
-                    viewport={{ once: true, amount: 0.8 }}
-                    className="writeup"
-                    id="cont1"
                     style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}
                 >
                     <Box
@@ -62,7 +57,7 @@ export default function OurBrandsSection() {
                     >
                         Available on <Link href="https://www.amazon.com/stores/page/B7366461-CD62-4421-971D-BA746D4515C4" color="inherit">Amazon</Link> and <Link href="http://www.etsy.com/shop/Decorenvogue" color="inherit">Etsy</Link>
                     </Typography>
-                </motion.Box>
+                </Box>
             </Box>
     );
 }

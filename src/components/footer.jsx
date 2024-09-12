@@ -7,9 +7,8 @@ import theme from './theme';
 
 // Replace these with your own social media URLs
 const socialMediaLinks = {
-    facebook: '#',
-    twitter: '#',
-    instagram: '#',
+    facebook: 'https://www.facebook.com/profile.php?id=61556582745078',
+    instagram: 'https://www.instagram.com/decor.en.vogue/',
 };
 
 const Footer = () => {
@@ -60,9 +59,6 @@ const Footer = () => {
                         </Typography>
                         <IconButton aria-label="Facebook" color="inherit" component="a" href={socialMediaLinks.facebook}>
                             <FacebookIcon />
-                        </IconButton>
-                        <IconButton aria-label="Twitter" color="inherit" component="a" href={socialMediaLinks.twitter}>
-                            <TwitterIcon />
                         </IconButton>
                         <IconButton aria-label="Instagram" color="inherit" component="a" href={socialMediaLinks.instagram}>
                             <InstagramIcon />

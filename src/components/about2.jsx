@@ -3,6 +3,7 @@ import { experimentalStyled as styled } from '@mui/material/styles';
 import { Box, createTheme, Paper, Grid, Typography, useMediaQuery } from '@mui/material';
 import { motion } from "framer-motion";
 import theme from './theme';
+import { ROOT_PATH } from '../constants/constants';
 
 const t = createTheme({})
 
@@ -48,7 +49,7 @@ export default function AboutUsSection() {
                                 {isSmallScreen && (
                                     <Box
                                         component="img"
-                                        src={`https://woodworkingnearme.com/wp-content/uploads/2023/10/image-1698526664-scaled.jpg`}
+                                        src={ROOT_PATH + `/images/aboutImage.jpg`}
                                         alt="Avatar"
                                         sx={{
                                             display: 'block',
@@ -119,13 +120,14 @@ export default function AboutUsSection() {
                                 >
                                     <Box
                                         component="img"
-                                        src={`https://woodworkingnearme.com/wp-content/uploads/2023/10/image-1698526664-scaled.jpg`}
+                                        src={ROOT_PATH + `/images/aboutImage.jpg`}
                                         alt="Avatar"
                                         sx={{
                                             display: 'block',
                                             width: '100%',
                                             height: '100%',
                                             objectFit: 'cover',
+                                            maxHeight: '600px'
                                         }}
                                     />
                                 </motion.div>
